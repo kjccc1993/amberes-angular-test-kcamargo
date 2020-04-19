@@ -1,0 +1,134 @@
+<div class="h-100 home-container bg-white mx-auto">
+  <div class="p-5 d-flex flex-column">
+    <!-- header -->
+    <div class="w-100 row ml-0 align-content-center">
+      <div class="col-4 pl-0">
+        <img
+          src="assets/logo.jpg"
+          class="img-fluid w-50"
+          alt="Responsive image"
+        />
+      </div>
+      <div class="col-8 d-flex justify-content-end">
+        <div class="d-flex align-items-center justify-content-end">
+          <div class="mx-3 fs-20 text-info font-weight-bold">
+            6.449.989,38 VES
+          </div>
+
+          <button type="button" class="btn btn-info mx-1">Pagar Orden</button>
+          <button type="button" class="btn btn-info mx-1">
+            Compra - Venta
+          </button>
+          <div class="mx-3">
+            RafaelCm89
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h1 class="display-3 font-weight-normal">Bienvenido</h1>
+      <h5>Mi billetera o cuentas</h5>
+    </div>
+
+    <div class="row mx-0 d-flex justify-content-between">
+      <div class="card mb-3 col-4 p-0" style="max-width: 18rem;">
+        <div class="card-header bg-success fs-20 font-weight-bold text-white">
+          Bolívar Soberano
+        </div>
+        <div class="card-body fs-20 text-info font-weight-bold">
+          9.489,00 VES
+        </div>
+      </div>
+      <div class="card mb-3 col-4 p-0" style="max-width: 18rem;">
+        <div class="card-header bg-warning fs-20 font-weight-bold text-white">
+          Bitcoin
+        </div>
+        <div class="card-body fs-20 text-info font-weight-bold">
+          0.0034186 BTC
+        </div>
+      </div>
+      <div class="card mb-3 col-4 p-0" style="max-width: 18rem;">
+        <div class="card-header bg-danger fs-20 font-weight-bold text-white">
+          Petros
+        </div>
+        <div class="card-body fs-20 text-info font-weight-bold">
+          1PTR
+        </div>
+      </div>
+    </div>
+
+    <div>
+      Mis últimas transacciones
+    </div>
+
+    <div class="mt-3">
+      <table class="table table-hover text-center">
+        <thead>
+          <tr>
+            <th scope="col">TRANSACCIÓN</th>
+            <th scope="col">MONTO</th>
+            <th scope="col">ESTATUS</th>
+            <th scope="col">FECHA</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of table; index as i">
+            <td [ngClass]="'text-' + item.class">{{ item.type }}</td>
+            <td class="font-weight-bold">{{ item.amount }} VES</td>
+            <td>
+              <span
+                class="badge fs-14 py-1"
+                [ngClass]="'badge-' + item.class"
+                >{{ item.status }}</span
+              >
+            </td>
+            <td>{{ item.date | date: "dd/MM/yyyy hh:mm:ss aa" }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer-container">
+      <div class="footer-content px-5">
+        <div class="col-5 pl-0">
+          <img
+            src="assets/logo_2.png"
+            class="img-fluid w-50"
+            alt="Responsive image"
+          />
+        </div>
+        <div class="mt-3">
+          <div class="row">
+            <div class="col-6">
+              ChinChin te da la libertad que necesitas para manejar tu dinero
+              sin intermendiarios. A través de nuestra plataforma de dinero
+              digital podrás ahorra en cualquier divisa o criptomoneda y
+              realizar pagos y transferencias a cualquier parte del mundo, desde
+              cualquier dispositivo de manera segura, fácil y con bajo costo.
+            </div>
+            <div class="col-3 text-right d-flex flex-column">
+              <div class="link pb-3">
+                Nosotros
+              </div>
+              <div class="link pb-3">
+                Características
+              </div>
+            </div>
+            <div class="col-3 text-right d-flex flex-column">
+              <div class="link pb-3">
+                Contacto
+              </div>
+              <div class="link pb-3">
+                Ayuda y Soporte
+              </div>
+              <div class="link pb-3">
+                Términos
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

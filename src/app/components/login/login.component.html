@@ -1,0 +1,105 @@
+<div class="h-100 bg-light d-flex flex-row justify-content-center align-items-center">
+  <div class="card login-box">
+    <div class="card-body">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="d-flex flex-column p-2">
+          <div class="mx-auto py-5 w-75">
+            <img
+              src="assets/logo.jpg"
+              class="img-fluid"
+              alt="Responsive image"
+            />
+          </div>
+          <div class="d-flex flex-column">
+            <div class="input-group mb-1">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  ><fa-icon [icon]="faUser"></fa-icon
+                ></span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Email"
+                aria-label="Email"
+                aria-describedby="basic-addon1"
+                formControlName="email"
+                required
+              />
+            </div>
+
+            <div class="input-error">
+              {{
+                email.invalid &&
+                (email.dirty || email.touched) &&
+                email.errors.required
+                  ? "Email is required"
+                  : ""
+              }}
+              {{
+                email.invalid &&
+                (email.dirty || email.touched) &&
+                email.errors.pattern
+                  ? "Value has to be a valid email address"
+                  : ""
+              }}
+            </div>
+          </div>
+
+          <div class="d-flex flex-column">
+            <div class="input-group mb-1">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  ><fa-icon [icon]="faKey"></fa-icon
+                ></span>
+              </div>
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                aria-label="Password"
+                aria-describedby="basic-addon1"
+                formControlName="password"
+                required
+              />
+            </div>
+            <div class="input-error">
+              {{
+                password.invalid &&
+                (password.dirty || password.touched) &&
+                password.errors.required
+                  ? "Password is required"
+                  : ""
+              }}
+            </div>
+          </div>
+
+          <div
+            class="d-flex flex-row justify-content-between align-items-center"
+          >
+            <div>
+              <span (click)="forgotPassword()" class="link fs-14">
+                Forgot your password?</span
+              >
+            </div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              [disabled]="!loginForm.valid || loading"
+              (click)="onSubmit()"
+            >
+              <span *ngIf="!loading">LOG IN</span>
+              <div
+                *ngIf="loading"
+                class="spinner-border spinner-border-sm text-light"
+                role="status"
+              >
+                <span class="sr-only"></span>
+              </div>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

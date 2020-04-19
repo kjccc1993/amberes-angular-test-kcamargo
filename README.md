@@ -14,7 +14,9 @@ Creé un servicio para el login, que sería el encargado de comunicarce con la A
 
 **password**: amberescoin
 
-La contraseña se "encripta" con md5 para una capa de seguridad
+La contraseña se "encripta" con md5 para una capa de seguridad.
+
+No me dio tiempo de implementar JWT para el caso de autenticación, debía configurar el intercptor http para enviar el token en cada consulta luego del login, pero para los fines de la prueba no fue necesario.
 
 ## Carousel
 Implementé un componente que se encarga de manejarlo, es común para las vistas login y home.
